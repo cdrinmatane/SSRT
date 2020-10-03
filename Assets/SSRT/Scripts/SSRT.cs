@@ -462,17 +462,17 @@ public class SSRT : MonoBehaviour
     #region DestroyHelper
     //same as GraphicsUtils.Destroy but does not need the UnityEngine.PostProcessing namespace
     //You can use GraphicsUtils.Destroy if you use PostProcessing (v1?) but it's better not to depend on it.
-    public void DestroyRT(UnityObject obj)
+    public void DestroyRT(Object obj)
     {
         if (obj != null)
         {
 #if UNITY_EDITOR
                 if (Application.isPlaying)
-                    UnityObject.Destroy(obj);
+                    Object.Destroy(obj);
                 else
-                    UnityObject.DestroyImmediate(obj);
+                    Object.DestroyImmediate(obj);
 #else
-            UnityObject.Destroy(obj);
+            Object.Destroy(obj);
 #endif
         }
     }
